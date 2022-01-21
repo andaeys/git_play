@@ -9,7 +9,7 @@ FLAG_VALUE=$2
 
 # git preparation
 git checkout master
-git pull origin master
+git fetch
 git checkout -b $FLAG_KEY
 # ===========================
 
