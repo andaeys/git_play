@@ -1,5 +1,5 @@
 ENABLE_A=false
 ENABLE_B=false
-ENABLE_C=false
+ENABLE_C=true
 ENABLE_D=false
 ENABLE_E=false
