@@ -1,0 +1,22 @@
+name: create enable flag pr
+on:
+  workflow_dispatch:
+    inputs:
+      flagkey:
+        description: 'flag key to enable/disable'
+        required: true
+      flagvalue:
+        description: 'true or false'
+        required: true
+jobs:
+  build:
+    timeout-minutes: 3
+    name: build
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: git config --global user.email "ekayudha.sulistianda.com"
+      - run: git config --global user.name "andaeys"
+      - run: bash ./scripts/create-single-release-pr.sh "${{github.event.inputs.flagkey}}" "${{github.event.inputs.flagvalue}}"
